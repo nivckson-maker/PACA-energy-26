@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PACA Energy Services Limited | Indigenous Energy Services Provider</title>
+    <meta name="description" content="PACA Energy Services Limited - Nigerian indigenous provider of construction, facilities maintenance, and project management services to the oil & gas industry." />
+    <link rel="canonical" href="https://pacaenergyservices.com/" />
+    <link rel="icon" type="image/png" href="./assets/logo.png" />
+
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="PACA Energy Services Limited" />
+    <meta property="og:description" content="Foremost Indigenous Energy Services Provider — construction, maintenance, and project management for the Nigerian Oil & Gas industry." />
+    <meta property="og:url" content="https://pacaenergyservices.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://pacaenergyservices.com/assets/logo.png" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="PACA Energy Services Limited" />
+    <meta name="twitter:description" content="Nigerian indigenous provider of construction, maintenance, and project management to the oil & gas industry." />
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        blue: {
+                            900: '#1e3a8a',
+                        },
+                        orange: {
+                            500: '#f97316',
+                            600: '#ea580c',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        .view-section {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        .view-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-gray-900 flex flex-col min-h-screen">
+
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-40 shadow-sm">
+        <div class="container mx-auto px-4 h-36 flex items-center justify-between">
+            <div class="flex items-center cursor-pointer" onclick="navigateTo('home')">
+                <!-- Logo Image -->
+                <img src="./assets/logo.png" alt="PACA Energy Services" class="h-32 w-auto" />
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-8 font-medium text-sm text-gray-600">
+                <button onclick="navigateTo('home')" class="hover:text-blue-900 transition-colors nav-link"
+                    data-target="home">Home</button>
+                <button onclick="navigateTo('about')" class="hover:text-blue-900 transition-colors nav-link"
+                    data-target="about">About</button>
+                <button onclick="navigateTo('services')" class="hover:text-blue-900 transition-colors nav-link"
+                    data-target="services">Services</button>
+                <button onclick="navigateTo('projects')" class="hover:text-blue-900 transition-colors nav-link"
+                    data-target="projects">Projects</button>
+            </div>
+
+            <div class="hidden md:flex gap-4">
+                <button onclick="scrollToContact()"
+                    class="px-6 py-2.5 rounded-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 bg-blue-900 text-white hover:bg-blue-800 shadow-md hover:shadow-lg hover:-translate-y-0.5 !text-sm">
+                    Send Enquiry
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600" onclick="toggleMobileMenu()">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-30 pt-24 px-6 hidden md:hidden">
+        <div class="flex flex-col gap-6 text-lg font-medium">
+            <button onclick="navigateTo('home'); toggleMobileMenu()"
+                class="text-left py-2 border-b border-gray-100">Home</button>
+            <button onclick="navigateTo('about'); toggleMobileMenu()"
+                class="text-left py-2 border-b border-gray-100">About</button>
+            <button onclick="navigateTo('services'); toggleMobileMenu()"
+                class="text-left py-2 border-b border-gray-100">Services</button>
+            <button onclick="navigateTo('projects'); toggleMobileMenu()"
+                class="text-left py-2 border-b border-gray-100">Projects</button>
+            <button onclick="scrollToContact(); toggleMobileMenu()"
+                class="w-full mt-4 px-6 py-3 rounded font-semibold bg-blue-900 text-white">Send Enquiry</button>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-1">
+
+        <!-- HOME VIEW -->
+        <div id="view-home" class="view-section active">
+
+            <!-- Hero -->
+            <div class="relative bg-blue-900 min-h-[780px] flex items-center text-white overflow-hidden py-20">
+                <div
+                    class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-25">
+                </div>
+                <!-- Subtle gradient overlay for depth & legibility -->
+                <div class="absolute inset-0 bg-gradient-to-b from-blue-950/40 via-blue-900/20 to-blue-950/70"></div>
+                <div class="container mx-auto px-4 relative z-10">
+                    <div class="max-w-4xl mx-auto text-center">
+                        <!-- Logo — extra large, centered, transparent PNG over the hero -->
+                        <img src="./assets/logo.png" alt="PACA Energy Services"
+                            class="h-64 md:h-96 w-auto mx-auto mb-8 drop-shadow-2xl" />
+
+                        <!-- ISO Badge -->
+                        <div
+                            class="inline-flex items-center gap-2 mb-6 bg-orange-500/20 px-4 py-1.5 rounded-full border border-orange-500/50 backdrop-blur-sm">
+                            <i data-lucide="check-circle" class="text-orange-400 w-4 h-4"></i>
+                            <span class="text-sm font-semibold text-orange-100 tracking-wide">ISO 9001:2015 Aligned</span>
+                        </div>
+
+                        <!-- Company Name -->
+                        <h1 class="text-4xl md:text-6xl font-extrabold leading-[1.05] mb-4 tracking-tight">PACA Energy
+                            Services Limited</h1>
+
+                        <!-- Tagline -->
+                        <p class="text-xl md:text-2xl text-orange-300 font-semibold mb-6">Foremost Indigenous Energy
+                            Services Provider</p>
+
+                        <!-- Description -->
+                        <p class="text-lg text-gray-200 mb-10 max-w-2xl mx-auto leading-relaxed">Delivering
+                            world-class construction, maintenance, and project management solutions to the Nigerian
+                            Oil &amp; Gas industry with 100% local content compliance.</p>
+
+                        <!-- CTAs -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <button onclick="navigateTo('projects')"
+                                class="px-7 py-3.5 rounded-md font-semibold bg-orange-500 text-white hover:bg-orange-600 shadow-lg shadow-orange-500/30 hover:shadow-xl hover:shadow-orange-500/40 hover:-translate-y-0.5 transition-all duration-200 flex items-center gap-2 justify-center min-h-[48px]">
+                                View Projects <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <button onclick="navigateTo('services')"
+                                class="px-7 py-3.5 rounded-md font-semibold border-2 border-white/80 text-white hover:bg-white/10 hover:border-white transition-all duration-200 min-h-[48px]">
+                                Our Capabilities
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trusted By Strip -->
+            <div class="bg-slate-50 border-b border-gray-100 py-10">
+                <div class="container mx-auto px-4">
+                    <div class="flex flex-col md:flex-row md:items-center md:gap-12">
+                        <p class="text-gray-700 text-xs font-bold uppercase tracking-[0.2em] mb-4 md:mb-0 md:w-32 flex-shrink-0">
+                            Trusted By</p>
+                        <div
+                            class="flex-1 flex justify-around flex-wrap items-center gap-x-10 gap-y-4">
+                            <img src="https://logo.clearbit.com/greenvillelng.com" alt="Greenville LNG"
+                                class="h-8 md:h-10 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                                onerror="this.outerHTML='&lt;span class=&quot;text-lg font-bold text-gray-500 font-serif&quot;&gt;Greenville LNG&lt;/span&gt;'" />
+                            <img src="https://logo.clearbit.com/shell.com" alt="Shell"
+                                class="h-10 md:h-12 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                                onerror="this.outerHTML='&lt;span class=&quot;text-lg font-bold text-gray-500 font-serif&quot;&gt;Shell&lt;/span&gt;'" />
+                            <img src="https://logo.clearbit.com/exxonmobil.com" alt="ExxonMobil"
+                                class="h-8 md:h-10 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                                onerror="this.outerHTML='&lt;span class=&quot;text-lg font-bold text-gray-500 font-serif&quot;&gt;ExxonMobil&lt;/span&gt;'" />
+                            <img src="https://logo.clearbit.com/totalenergies.com" alt="TotalEnergies"
+                                class="h-8 md:h-10 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                                onerror="this.outerHTML='&lt;span class=&quot;text-lg font-bold text-gray-500 font-serif&quot;&gt;TotalEnergies&lt;/span&gt;'" />
+                            <img src="https://logo.clearbit.com/daewoo.com" alt="Daewoo"
+                                class="h-8 md:h-10 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                                onerror="this.outerHTML='&lt;span class=&quot;text-lg font-bold text-gray-500 font-serif&quot;&gt;Daewoo&lt;/span&gt;'" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Preview -->
+            <section class="py-20 bg-blue-900 text-white relative overflow-hidden">
+                <div class="container mx-auto px-4 relative z-10">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                        <!-- Photo Block -->
+                        <div class="relative rounded-xl overflow-hidden shadow-2xl">
+                            <img src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?auto=format&fit=crop&w=900&q=80"
+                                alt="PACA Energy Services field team at work"
+                                class="w-full h-full object-cover aspect-[4/3]"
+                                onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=900&q=80'" />
+                        </div>
+
+                        <!-- Text Block -->
+                        <div>
+                            <div class="mb-8 text-left">
+                                <span class="uppercase tracking-wider text-sm font-bold text-orange-400">Who We
+                                    Are</span>
+                                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-white">Driven by Integrity &
+                                    Excellence</h2>
+                                <div class="h-1 w-20 bg-orange-500 mt-4"></div>
+                            </div>
+                            <p class="text-gray-300 mb-8 text-lg leading-relaxed">
+                                PACA Energy Services Limited is a purely Nigerian company established to provide
+                                construction, facilities maintenance, and project management services to the
+                                manufacturing and oil and gas industries in Nigeria. We combine technical expertise with
+                                a proactive QHSE culture to deliver value.
+                            </p>
+                            <div class="grid grid-cols-2 gap-6 mb-10 border-t border-white/10 pt-6">
+                                <div class="flex flex-col gap-1">
+                                    <h4 class="text-4xl font-bold text-orange-500">100%</h4>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider">Indigenous Content</p>
+                                </div>
+                                <div class="flex flex-col gap-1">
+                                    <h4 class="text-4xl font-bold text-orange-500">Zero</h4>
+                                    <p class="text-sm text-gray-400 uppercase tracking-wider">LTI Incidents Goal</p>
+                                </div>
+                            </div>
+                            <button onclick="navigateTo('about')"
+                                class="px-6 py-3 rounded font-semibold bg-orange-500 text-white hover:bg-orange-600 shadow-md inline-flex items-center gap-2">
+                                Learn More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services List (Included in Home) -->
+            <div id="home-services"></div>
+
+            <!-- Partner With Us CTA -->
+            <section class="py-16 bg-gradient-to-r from-blue-800 to-blue-700 text-white">
+                <div class="container mx-auto px-4 text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-4">Partner With Us</h2>
+                    <p class="text-lg text-blue-100 max-w-2xl mx-auto mb-8">
+                        We are firmly committed to delivering energy services with proven local content and international
+                        standards. Let's build something together.
+                    </p>
+                    <button onclick="scrollToContact()"
+                        class="px-8 py-3 rounded font-semibold bg-orange-500 text-white hover:bg-orange-600 shadow-lg inline-flex items-center gap-2">
+                        Contact Us <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section class="py-20 bg-white" id="contact">
+                <div class="container mx-auto px-4">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <div>
+                            <div class="mb-12 text-left">
+                                <span class="uppercase tracking-wider text-sm font-bold text-orange-600">Get In
+                                    Touch</span>
+                                <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Partner With Us</h2>
+                                <div class="h-1 w-20 bg-orange-500 mt-4"></div>
+                            </div>
+                            <p class="text-gray-600 mb-8">Whether you need a quote for fabrication, maintenance support,
+                                or project management consultancy, our team is ready to assist.</p>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-blue-100 p-3 rounded-full text-blue-900"><i data-lucide="map-pin"
+                                            class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Head Office</h4>
+                                        <p class="text-gray-600 max-w-sm">Plot 5 Road 1 ODANI GREEN Estate, Off East
+                                            West Road, Elelenwo, Port Harcourt</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-blue-100 p-3 rounded-full text-blue-900"><i data-lucide="mail"
+                                            class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Email Us</h4>
+                                        <p class="text-gray-600">info@pacaenergyservices.com</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <div class="bg-blue-100 p-3 rounded-full text-blue-900"><i data-lucide="phone"
+                                            class="w-5 h-5"></i></div>
+                                    <div>
+                                        <h4 class="font-bold text-gray-900">Call Us</h4>
+                                        <p class="text-gray-600">0803 536 9473, 0708 421 8210</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-50 p-8 rounded-xl border border-gray-200">
+                            <h3 class="text-xl font-bold mb-6">Send an Inquiry / RFQ</h3>
+                            <form action="https://formspree.io/f/xeegegyw" method="POST" class="space-y-4">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <input required name="name" placeholder="Full Name"
+                                        class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-900 outline-none">
+                                    <input name="company" placeholder="Company Name"
+                                        class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-900 outline-none">
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <input required type="email" name="email" placeholder="Email Address"
+                                        class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-900 outline-none">
+                                    <input required type="tel" name="phone" placeholder="Phone Number"
+                                        class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-900 outline-none">
+                                </div>
+                                <div>
+                                    <span class="block text-sm font-medium text-gray-700 mb-2">Nature of Inquiry (Select
+                                        all that apply)</span>
+                                    <div
+                                        class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-3 border border-gray-300 rounded bg-white">
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="checkbox" name="type" value="General Inquiry"
+                                                class="rounded text-blue-900 focus:ring-blue-900">
+                                            <span class="text-sm text-gray-700">General Inquiry</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="checkbox" name="type" value="Request for Quote (RFQ)"
+                                                class="rounded text-blue-900 focus:ring-blue-900">
+                                            <span class="text-sm text-gray-700">Request for Quote (RFQ)</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="checkbox" name="type" value="Partnership"
+                                                class="rounded text-blue-900 focus:ring-blue-900">
+                                            <span class="text-sm text-gray-700">Partnership</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="checkbox" name="type" value="Request Company Profile"
+                                                class="rounded text-blue-900 focus:ring-blue-900">
+                                            <span class="text-sm text-gray-700 font-semibold text-orange-600">Request
+                                                Company Profile</span>
+                                        </label>
+                                        <label class="flex items-center space-x-2 cursor-pointer">
+                                            <input type="checkbox" name="type" value="Careers"
+                                                class="rounded text-blue-900 focus:ring-blue-900">
+                                            <span class="text-sm text-gray-700">Careers</span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <textarea required name="message" rows="4" placeholder="How can we help you?"
+                                    class="w-full p-3 border border-gray-300 rounded focus:ring-2 focus:ring-blue-900 outline-none"></textarea>
+                                <button type="submit"
+                                    class="w-full px-6 py-3 rounded font-semibold bg-blue-900 text-white hover:bg-blue-800 shadow-lg">Send
+                                    Message</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- ABOUT VIEW -->
+        <div id="view-about" class="view-section">
+            <div class="py-20 container mx-auto px-4">
+                <div class="mb-12 text-center">
+                    <span class="uppercase tracking-wider text-sm font-bold text-orange-600">Company Profile</span>
+                    <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">About PACA Energy</h2>
+                    <div class="h-1 w-20 bg-orange-500 mt-4 mx-auto"></div>
+                </div>
+
+                <!-- Main Profile Text -->
+                <div class="max-w-4xl mx-auto prose prose-lg mb-16">
+                    <p class="mb-6 leading-relaxed">PACA Energy Services Limited is a Nigerian company established to
+                        provide construction, facilities maintenance, and project management services to the
+                        manufacturing and oil and gas industries in Nigeria.</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-8">
+                        <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-900">
+                            <h3 class="text-xl font-bold mb-2 text-blue-900">Our Mission</h3>
+                            <p class="text-gray-700">To become the foremost, genuinely indigenous provider of
+                                energy, oil, and gas services.</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-lg border-l-4 border-orange-500">
+                            <h3 class="text-xl font-bold mb-2 text-orange-600">Our Vision</h3>
+                            <p class="text-gray-700">To be a reference company for true local content development in
+                                the Nigerian oil and gas industry.</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-bold mb-4 text-center">Core Values</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none pl-0 not-prose mb-12">
+                        <div class="bg-slate-50 p-5 rounded border border-slate-200">
+                            <strong class="text-blue-900 block mb-1">Integrity</strong>
+                            <span class="text-sm text-gray-600">Honesty, diligence, and reliability are the basis of all
+                                business. We strive for success by upholding this integrity.</span>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded border border-slate-200">
+                            <strong class="text-blue-900 block mb-1">People</strong>
+                            <span class="text-sm text-gray-600">Our people are our greatest strength. We invest heavily
+                                in focused career development and intensive training programs.</span>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded border border-slate-200">
+                            <strong class="text-blue-900 block mb-1">QHSE</strong>
+                            <span class="text-sm text-gray-600">We take QHSE seriously. We ensure total compliance to
+                                relevant regulations with a goal of Zero Incidents.</span>
+                        </div>
+                        <div class="bg-slate-50 p-5 rounded border border-slate-200">
+                            <strong class="text-blue-900 block mb-1">Customer Satisfaction</strong>
+                            <span class="text-sm text-gray-600">Our customer-focused values drive our determination for
+                                integrity and excellence.</span>
+                        </div>
+                    </div>
+
+                    <!-- Management System -->
+                    <div class="mb-16">
+                        <h3 class="text-2xl font-bold mb-4 text-center">Our Management System</h3>
+                        <p class="text-center max-w-2xl mx-auto mb-8 text-gray-600">Aligned with the ISO 9001:2015
+                            standard.</p>
+                        <div class="bg-white border border-gray-200 rounded-xl p-8 shadow-sm">
+                            <ul class="space-y-4">
+                                <li class="flex gap-3">
+                                    <i data-lucide="check-circle" class="text-green-500 flex-shrink-0 mt-1"></i>
+                                    <span>Supports procurement, construction, maintenance, and technical service
+                                        activities in line with relevant codes and standards.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i data-lucide="check-circle" class="text-green-500 flex-shrink-0 mt-1"></i>
+                                    <span>Maintains effective Document Control System in line with ISO 9001:2015.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i data-lucide="check-circle" class="text-green-500 flex-shrink-0 mt-1"></i>
+                                    <span>Efficient and proactive HSE Management System designed to prevent injuries
+                                        with a project goal of Zero Incidents.</span>
+                                </li>
+                                <li class="flex gap-3">
+                                    <i data-lucide="check-circle" class="text-green-500 flex-shrink-0 mt-1"></i>
+                                    <span>Implementation of proactive measures including Job Hazard Analysis (JHA),
+                                        toolbox meetings, and provision of PPE.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Why Choose Us -->
+                    <div class="mb-16 bg-blue-900 text-white p-8 rounded-xl text-center">
+                        <h3 class="text-2xl font-bold mb-6 text-white">Why Our Clients Choose Us</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="p-4 bg-white/10 rounded-lg">
+                                <strong class="block text-xl mb-2 text-orange-400">Experience</strong>
+                                <span class="text-sm text-gray-200">People with vast and relevant experience and
+                                    training.</span>
+                            </div>
+                            <div class="p-4 bg-white/10 rounded-lg">
+                                <strong class="block text-xl mb-2 text-orange-400">Service Driven</strong>
+                                <span class="text-sm text-gray-200">A profitable, service-driven environment.</span>
+                            </div>
+                            <div class="p-4 bg-white/10 rounded-lg">
+                                <strong class="block text-xl mb-2 text-orange-400">Technology</strong>
+                                <span class="text-sm text-gray-200">Technology to meet international standards.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Leadership Experience -->
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-center">Leadership Track Record</h3>
+                        <p class="text-center text-gray-600 mb-8">Selected project execution and management experiences
+                            of our CEO and Directors.</p>
+                        <div class="overflow-x-auto">
+                            <table class="w-full text-sm text-left border border-gray-200 rounded-lg overflow-hidden">
+                                <thead class="bg-gray-50 text-gray-700 font-bold uppercase">
+                                    <tr>
+                                        <th class="p-3 border-b">Project</th>
+                                        <th class="p-3 border-b">Client</th>
+                                        <th class="p-3 border-b">Role</th>
+                                        <th class="p-3 border-b">Year</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="divide-y divide-gray-100">
+                                    <tr>
+                                        <td class="p-3">Qua Iboe Field EPF</td>
+                                        <td class="p-3">ExxonMobil</td>
+                                        <td class="p-3">Installation Consultant</td>
+                                        <td class="p-3">2014-2015</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3">Nembe Creek Trunk Line</td>
+                                        <td class="p-3">Shell</td>
+                                        <td class="p-3">Fab Superintendent</td>
+                                        <td class="p-3">2009-2011</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3">Ibewa Well Flow Lines</td>
+                                        <td class="p-3">Total</td>
+                                        <td class="p-3">Construction Supervisor</td>
+                                        <td class="p-3">2006-2009</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3">East Area Project</td>
+                                        <td class="p-3">ExxonMobil</td>
+                                        <td class="p-3">Supervisor</td>
+                                        <td class="p-3">2005-2006</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="p-3">JV Platform Repair</td>
+                                        <td class="p-3">ExxonMobil</td>
+                                        <td class="p-3">Construction Manager</td>
+                                        <td class="p-3">2016</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SERVICES VIEW -->
+        <div id="view-services" class="view-section">
+            <!-- Content injected via JS -->
+        </div>
+
+        <!-- PROJECTS VIEW -->
+        <div id="view-projects" class="view-section">
+            <!-- Content injected via JS -->
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-950 text-gray-400 pt-16 pb-6 text-sm">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-10 pb-12">
+                <!-- Brand Block -->
+                <div class="md:col-span-4">
+                    <div class="flex items-center gap-4 mb-5">
+                        <img src="./assets/logo.png" alt="PACA Energy Services" class="h-20 w-auto drop-shadow-lg" />
+                        <div>
+                            <h3 class="text-white font-bold text-2xl leading-tight tracking-tight">PACA</h3>
+                            <p class="text-xs text-blue-300 uppercase tracking-[0.2em] font-semibold">Energy Services</p>
+                        </div>
+                    </div>
+                    <p class="mb-4 text-gray-400 max-w-xs leading-relaxed">Delivering excellence in energy services with a commitment to
+                        local content and international standards.</p>
+                </div>
+
+                <!-- About -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">About</h4>
+                    <ul class="space-y-2">
+                        <li onclick="navigateTo('about')" class="cursor-pointer hover:text-white">About Us</li>
+                        <li onclick="navigateTo('about')" class="cursor-pointer hover:text-white">Leadership</li>
+                        <li onclick="navigateTo('about')" class="cursor-pointer hover:text-white">QHSE</li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Services</h4>
+                    <ul class="space-y-2">
+                        <li onclick="navigateTo('services')" class="cursor-pointer hover:text-white">Construction</li>
+                        <li onclick="navigateTo('services')" class="cursor-pointer hover:text-white">Maintenance</li>
+                        <li onclick="navigateTo('services')" class="cursor-pointer hover:text-white">Procurement</li>
+                        <li onclick="navigateTo('services')" class="cursor-pointer hover:text-white">Project Management
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Resources</h4>
+                    <ul class="space-y-2">
+                        <li onclick="navigateTo('projects')" class="cursor-pointer hover:text-white">Projects</li>
+                        <li onclick="scrollToContact()" class="cursor-pointer hover:text-white">Request Quote</li>
+                        <li onclick="scrollToContact()" class="cursor-pointer hover:text-white">Company Profile</li>
+                    </ul>
+                </div>
+
+                <!-- Contact -->
+                <div class="md:col-span-2">
+                    <h4 class="text-white font-bold mb-4 uppercase tracking-wider text-xs">Contact</h4>
+                    <p class="mb-3 text-gray-400">Plot 5 Road 1 ODANI GREEN Estate, Off East West Road, Elelenwo, Port
+                        Harcourt</p>
+                    <p class="mb-2 text-gray-400">0803 536 9473</p>
+                    <p class="mb-2 text-gray-400">0708 421 8210</p>
+                    <p class="text-gray-400">info@pacaenergyservices.com</p>
+                </div>
+            </div>
+
+            <div class="border-t border-blue-900 pt-6 flex flex-col md:flex-row justify-between items-center gap-3">
+                <p class="text-gray-500 text-xs">&copy; 2026 PACA Energy Services Limited. All rights reserved.</p>
+                <p class="text-gray-500 text-xs">Foremost Indigenous Energy Services Provider</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // --- Data ---
+        const services = [
+            {
+                id: 's1',
+                title: 'Construction & Fabrication',
+                icon: 'hammer',
+                image: 'https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80',
+                description: 'Piping Fabrication & Erection, Pipeline/Flowline Construction, Storage Tanks, Flare Stacks, and Civil Works.',
+                details: 'We specialize in process modules, production headers, manifolds, and electrical/fiber optics cable laying.'
+            },
+            {
+                id: 's2',
+                title: 'Facilities Maintenance',
+                icon: 'hard-hat',
+                image: 'https://images.unsplash.com/photo-1565793979206-6d24d4c0e23b?auto=format&fit=crop&w=800&q=80',
+                description: 'Comprehensive maintenance including Blasting & Painting, Vessel Cleaning, Leak Repair, and Tower Crane services.',
+                details: 'Our services extend to pressure testing, statutory inspection, onsite valve services, and rope access.'
+            },
+            {
+                id: 's3',
+                title: 'Project Management',
+                icon: 'briefcase',
+                image: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=800&q=80',
+                description: 'Turnkey, Partial, and Supportive project management consultancy services from conception to commissioning.',
+                details: 'We provide key professionals and technical support to ensure projects are delivered on time and within budget.'
+            },
+            {
+                id: 's4',
+                title: 'Procurement',
+                icon: 'anchor',
+                image: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=800&q=80',
+                description: 'Supply of Bulk Steel, Line Pipes, Piping Fittings, Valves, Bolts & Nuts, and Gaskets.',
+                details: 'We source high-grade materials to support construction and maintenance projects.'
+            },
+            {
+                id: 's5',
+                title: 'Instrumentation',
+                icon: 'gauge',
+                image: 'https://images.unsplash.com/photo-1581093458791-9d42cc05b9c4?auto=format&fit=crop&w=800&q=80',
+                description: 'Calibration, installation, and maintenance of pressure sensors, flow meters, and analytical devices.',
+                details: 'We offer bespoke instrumentation solutions for stable and accurate process control.'
+            },
+            {
+                id: 's6',
+                title: 'Specialty Services',
+                icon: 'wrench',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80',
+                description: 'Scaffolding, Rigging, Bolt Torquing & Tensioning, and fabrication of Cargo Carrying Units.',
+                details: 'Includes fabrication of baskets, mud skips, gas racks, and desanding/dewaxing of production vessels.'
+            }
+        ];
+
+        const projects = [
+            {
+                id: 'p1',
+                title: 'ISO Pentane Piping EPC Works',
+                client: 'Greenville LNG Co. Ltd.',
+                location: 'Rivers State',
+                category: 'Construction',
+                year: '2024',
+                description: 'Engineering, Procurement, and Construction of ISO Pentane piping systems.',
+                status: 'Completed',
+                image: 'https://images.unsplash.com/photo-1581094794329-c8112a89af12?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 'p2',
+                title: 'Repairs to Jereh Propane & Overhead Co',
+                client: 'Greenville LNG Co. Ltd.',
+                location: 'Rivers State',
+                category: 'Maintenance',
+                year: '2025',
+                description: 'Critical repair works on propane systems and overhead components.',
+                status: 'Completed',
+                image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 'p3',
+                title: 'Instrument Header Works SASPG',
+                client: 'Greenville LNG',
+                location: 'Rivers State',
+                category: 'Instrumentation',
+                year: '2025',
+                description: 'Installation and calibration of instrument headers.',
+                status: 'Completed',
+                image: 'https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 'p4',
+                title: 'Rental of Master Level Gauge',
+                client: 'Greenville LNG',
+                location: 'Rivers State',
+                category: 'Instrumentation',
+                year: '2025',
+                description: 'Provision of specialized gauging equipment.',
+                status: 'Completed',
+                image: 'https://images.unsplash.com/photo-1581092446327-9b52bd1570c2?auto=format&fit=crop&w=800&q=80'
+            },
+            {
+                id: 'p5',
+                title: 'Additional Work on Scrubber C101 A',
+                client: 'Greenville LNG',
+                location: 'Rivers State',
+                category: 'Maintenance',
+                year: '2025',
+                description: 'Specialized maintenance work on scrubber units.',
+                status: 'Completed',
+                image: 'https://images.unsplash.com/photo-1565793979206-6d24d4c0e23b?auto=format&fit=crop&w=800&q=80'
+            }
+        ];
+
+        // --- Render Helpers ---
+        function renderServices(opts = {}) {
+            const { dark = false, compact = false } = opts;
+            const bgClass = dark ? 'bg-blue-900 text-white' : 'bg-white';
+            const headingColor = dark ? 'text-white' : 'text-gray-900';
+
+            const html = `
+            <section class="py-20 ${bgClass}">
+                <div class="container mx-auto px-4">
+                    <div class="mb-12 text-center">
+                        <span class="uppercase tracking-wider text-sm font-bold text-orange-${dark ? '400' : '600'}">What We Do</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 ${headingColor}">Our Expertise</h2>
+                        <div class="h-1 w-20 bg-orange-500 mt-4 mx-auto"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${services.map(s => `
+                            <div class="group relative rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 aspect-[4/3] cursor-pointer">
+                                <img src="${s.image}" alt="${s.title}"
+                                    class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                                    onerror="this.src='https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80'" />
+                                <div class="absolute inset-0 bg-gradient-to-t from-blue-900 via-blue-900/60 to-transparent"></div>
+                                <div class="absolute inset-0 flex flex-col justify-end p-6">
+                                    <div class="flex items-center gap-2 mb-2">
+                                        <i data-lucide="${s.icon}" class="text-orange-400 w-5 h-5"></i>
+                                        <h3 class="text-xl font-bold text-white drop-shadow-md">${s.title}</h3>
+                                    </div>
+                                    ${compact ? '' : `<p class="text-sm text-gray-200 leading-relaxed opacity-0 group-hover:opacity-100 max-h-0 group-hover:max-h-32 overflow-hidden transition-all duration-500">${s.description}</p>`}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            </section>`;
+            return html;
+        }
+
+        function mountServices() {
+            // Dark themed compact version on home (matches mockup)
+            document.getElementById('home-services').innerHTML = renderServices({ dark: true, compact: true });
+            // Light themed full version on services page
+            document.getElementById('view-services').innerHTML = renderServices({ dark: false, compact: false });
+        }
+
+        function renderProjects() {
+            // Configuration for category-based icons
+            const categoryConfig = {
+                'Construction': { icon: 'hammer', color: 'bg-orange-50 text-orange-600' },
+                'Maintenance': { icon: 'wrench', color: 'bg-blue-50 text-blue-600' },
+                'Instrumentation': { icon: 'gauge', color: 'bg-teal-50 text-teal-600' },
+                'default': { icon: 'hard-hat', color: 'bg-gray-50 text-gray-600' }
+            };
+
+            const html = `
+            <section class="py-20 bg-slate-50">
+                <div class="container mx-auto px-4">
+                     <div class="mb-12 text-center">
+                        <span class="uppercase tracking-wider text-sm font-bold text-orange-600">Track Record</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mt-2 text-gray-900">Project Execution</h2>
+                        <div class="h-1 w-20 bg-orange-500 mt-4 mx-auto"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        ${projects.map(p => {
+                const config = categoryConfig[p.category] || categoryConfig['default'];
+                return `
+                            <div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-shadow border border-gray-100">
+                                <div class="h-48 ${config.color} relative group overflow-hidden">
+                                    <img src="${p.image}" alt="${p.title}"
+                                        class="absolute inset-0 w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
+                                        onerror="this.style.display='none'; this.parentElement.classList.add('flex','items-center','justify-center'); this.insertAdjacentHTML('afterend','<i data-lucide=&quot;${config.icon}&quot; class=&quot;w-20 h-20 drop-shadow-sm&quot;></i>'); lucide.createIcons();" />
+                                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                                    <div class="absolute top-4 right-4 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold text-blue-900 shadow-sm z-10">
+                                        ${p.year}
+                                    </div>
+                                    <div class="absolute bottom-3 left-4 text-white text-xs font-semibold uppercase tracking-wider drop-shadow-md z-10 flex items-center gap-2">
+                                        <i data-lucide="${config.icon}" class="w-4 h-4"></i> ${p.category}
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex justify-end items-center mb-2">
+                                        <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded font-medium">${p.status}</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-gray-900 mb-2 line-clamp-2">${p.title}</h3>
+                                    <p class="text-sm text-gray-500 mb-4 flex items-center gap-2">
+                                        <i data-lucide="map-pin" class="w-3 h-3"></i> ${p.location} • ${p.client}
+                                    </p>
+                                    <p class="text-gray-600 text-sm line-clamp-3">${p.description}</p>
+                                </div>
+                            </div>
+                        `}).join('')}
+                    </div>
+                </div>
+            </section>`;
+            document.getElementById('view-projects').innerHTML = html;
+            // Note: Track Record (projects) section intentionally removed from home page
+        }
+
+        // --- Logic ---
+        const VALID_VIEWS = ['home', 'about', 'services', 'projects'];
+
+        function navigateTo(pageId) {
+            // Hide all views
+            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active'));
+
+            // Show requested view (fallback to home)
+            const target = VALID_VIEWS.includes(pageId) ? pageId : 'home';
+            document.getElementById(`view-${target}`).classList.add('active');
+
+            // Highlight nav
+            document.querySelectorAll('.nav-link').forEach(el => {
+                if (el.dataset.target === target) el.classList.add('font-bold', 'text-blue-900');
+                else el.classList.remove('font-bold', 'text-blue-900');
+            });
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+
+        function scrollToContact() {
+            navigateTo('home');
+            setTimeout(() => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }, 100);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // --- Init ---
+        mountServices();
+        renderProjects();
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
